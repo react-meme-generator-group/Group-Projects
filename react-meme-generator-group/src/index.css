@@ -1,0 +1,71 @@
+body{
+    background-color: aquamarine;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+input{
+    margin-right: 5px;
+    text-align: center;
+}
+
+button{
+    margin-right: 5px;
+    margin-top: 5px
+}
+
+.mainInputContainer{
+    text-align: center;
+    margin-bottom: 5px
+}
+
+.initialMemeContainer{
+    position: relative;
+    /*text-align: center;*/
+}
+
+.topText{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 100px;
+    left: 875px
+}
+
+.bottomText{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 550px;
+    left: 850px
+}
+
+.memesComponent{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center
+}
+
+.singleMemeContainer{
+    position: relative;
+    /*text-align: center;*/
+}
+
+.topTextSingleMeme{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 75px;
+    left: 875px;
+}
+
+.bottomTextSingleMeme{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 500px;
+    left: 850px;
+}
