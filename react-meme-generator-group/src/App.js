@@ -57,18 +57,19 @@ class App extends React.Component {
 
     selectedMemeText() {
 
-        let allMemeAndText = {
-            topText: this.state.topText,
-            bottomText: this.state.bottomText,
-            memeKey: this.state.newMeme.id,
-            memeUrl: this.state.newMeme.url
-        }
-        savedMemeAndText.push(allMemeAndText)
+        this.setState((prevState) => {
 
-        this.setState({
-            topText: "",
-            bottomText: "",
-            selectedMemeAndText: savedMemeAndText
+            let newMemeAndText = {
+                topText: prevState.topText,
+                bottomText: prevState.bottomText,
+                memeKey: prevState.newMeme.id,
+                memeUrl: prevState.newMeme.url
+            }
+            return {
+                topText: "",
+                bottomText: "",
+                selectedMemeAndText: [...prevState.selectedMemeAndText, newMemeAndText]
+            }
         })
     }
 
@@ -94,7 +95,7 @@ class App extends React.Component {
         this.deleteButton(id)
     }
 
-    deleteButton(id) {
+    /*deleteButton(id) {
         let search = this.state.selectedMemeAndText
         console.log(id)
         console.log(search)
@@ -107,6 +108,24 @@ class App extends React.Component {
 
         this.setState({
             selectedMemeAndText: search
+        })
+    }*/
+
+    //Alternate Delete Method Below//
+
+    deleteButton(id) {
+
+        this.setState((prevState) => {
+            let newArr = prevState.selectedMemeAndText.filter(function (each) {
+                if (each.memeKey !== id) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+            return {
+                selectedMemeAndText: newArr
+            }
         })
     }
 
